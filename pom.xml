@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.liamon</groupId>
-            <artifactId>ct417-assignment1-b</artifactId>
+            <artifactId>ct417-assignment1-a</artifactId>
             <version>master-SNAPSHOT</version>
         </dependency>
     </dependencies>
