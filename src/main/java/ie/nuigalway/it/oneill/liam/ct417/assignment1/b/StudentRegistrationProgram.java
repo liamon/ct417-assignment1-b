@@ -41,6 +41,42 @@ public class StudentRegistrationProgram {
         course.setName("Physics");
         course.setStartDate(new LocalDate(2017, 9, 2));
         course.setEndDate(new LocalDate(2021, 5, 29));
-        course.addModules(modules[0], modules[1], modules[2], modules[3]);
+        course.addModules(modules[0], modules[1], modules[2]);
+    }
+    
+    private String courseInfo(Course course) {
+        StringBuilder courseInfo = new StringBuilder(course.getName());
+        courseInfo.append("\nStart Date: ");
+        courseInfo.append(course.getStartDate());
+        courseInfo.append("\nEnd Date:");
+        courseInfo.append(course.getEndDate());
+        courseInfo.append("\nModules");
+        for (Module module : course.getModules()) {
+            courseInfo.append(moduleInfo(module));
+        }
+        courseInfo.append("\n");
+        return courseInfo.toString();
+    }
+    
+    private String moduleInfo(Module module) {
+        StringBuilder moduleInfo = new StringBuilder(module.getName());
+        moduleInfo.append(" - ");
+        moduleInfo.append(module.getId());
+        moduleInfo.append("\nStudents: ");
+        for (Student student : module.getStudents()) {
+            moduleInfo.append("");
+        }
+        moduleInfo.append("\n");
+        return moduleInfo.toString();
+    }
+    
+    private String studentInfo(Student student) {
+        StringBuilder studentInfo = new StringBuilder(student.getName());
+        studentInfo.append("\nID: ");
+        studentInfo.append(student.getId());
+        studentInfo.append("\nDate of birth: ");
+        studentInfo.append(student.getDob());
+        studentInfo.append("\n");
+        return studentInfo.toString();
     }
 }
