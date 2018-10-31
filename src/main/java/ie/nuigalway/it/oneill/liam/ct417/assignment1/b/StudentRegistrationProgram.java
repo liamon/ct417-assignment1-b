@@ -42,15 +42,17 @@ public class StudentRegistrationProgram {
         course.setStartDate(new LocalDate(2017, 9, 2));
         course.setEndDate(new LocalDate(2021, 5, 29));
         course.addModules(modules[0], modules[1], modules[2]);
+        
+        System.out.println(courseInfo(course));
     }
     
-    private String courseInfo(Course course) {
+    private static String courseInfo(Course course) {
         StringBuilder courseInfo = new StringBuilder(course.getName());
         courseInfo.append("\nStart Date: ");
         courseInfo.append(course.getStartDate());
-        courseInfo.append("\nEnd Date:");
+        courseInfo.append("\nEnd Date: ");
         courseInfo.append(course.getEndDate());
-        courseInfo.append("\nModules");
+        courseInfo.append("\nModules: \n");
         for (Module module : course.getModules()) {
             courseInfo.append(moduleInfo(module));
         }
@@ -58,19 +60,19 @@ public class StudentRegistrationProgram {
         return courseInfo.toString();
     }
     
-    private String moduleInfo(Module module) {
+    private static String moduleInfo(Module module) {
         StringBuilder moduleInfo = new StringBuilder(module.getName());
         moduleInfo.append(" - ");
         moduleInfo.append(module.getId());
-        moduleInfo.append("\nStudents: ");
+        moduleInfo.append("\nStudents: \n");
         for (Student student : module.getStudents()) {
-            moduleInfo.append("");
+            moduleInfo.append(studentInfo(student));
         }
         moduleInfo.append("\n");
         return moduleInfo.toString();
     }
     
-    private String studentInfo(Student student) {
+    private static String studentInfo(Student student) {
         StringBuilder studentInfo = new StringBuilder(student.getName());
         studentInfo.append("\nID: ");
         studentInfo.append(student.getId());
