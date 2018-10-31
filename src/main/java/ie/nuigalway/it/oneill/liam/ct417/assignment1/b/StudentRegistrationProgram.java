@@ -47,7 +47,8 @@ public class StudentRegistrationProgram {
     }
     
     private static String courseInfo(Course course) {
-        StringBuilder courseInfo = new StringBuilder(course.getName());
+        StringBuilder courseInfo = new StringBuilder("Course: ");
+        courseInfo.append(course.getName());
         courseInfo.append("\nStart Date: ");
         courseInfo.append(course.getStartDate());
         courseInfo.append("\nEnd Date: ");
