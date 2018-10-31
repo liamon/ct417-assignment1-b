@@ -59,7 +59,7 @@ public class StudentRegistrationProgram {
     }
     
     private static Course[] assignCourse(Module[] modules) {
-        Course[] course = {new Course()};
+        Course[] course = {new Course(), new Course()};
         course[0].setName("Physics");
         course[0].setStartDate(new LocalDate(2017, 9, 2));
         course[0].setEndDate(new LocalDate(2021, 5, 29));
