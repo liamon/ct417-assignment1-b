@@ -1,6 +1,7 @@
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.b;
 
 import ie.nuigalway.it.oneill.liam.ct417.assignment1.a.*;
+import java.util.stream.Stream;
 import org.joda.time.LocalDate;
 
 /**
@@ -11,8 +12,10 @@ public class StudentRegistrationProgram {
     public static void main(String[] args) {
         Student[] students = assignStudents();
         Module[] modules = assignModules(students);
-        Course course = assignCourse(modules);
-        System.out.println(courseInfo(course));
+        Course[] courses = assignCourse(modules);
+        Stream.of(courses).forEach((course) -> {
+            System.out.println(courseInfo(course));
+        });
     }
     
     private static Student[] assignStudents() {
@@ -55,12 +58,17 @@ public class StudentRegistrationProgram {
         return modules;
     }
     
-    private static Course assignCourse(Module[] modules) {
-        Course course = new Course();
-        course.setName("Physics");
-        course.setStartDate(new LocalDate(2017, 9, 2));
-        course.setEndDate(new LocalDate(2021, 5, 29));
-        course.addModules(modules[0], modules[1], modules[2]);
+    private static Course[] assignCourse(Module[] modules) {
+        Course[] course = {new Course()};
+        course[0].setName("Physics");
+        course[0].setStartDate(new LocalDate(2017, 9, 2));
+        course[0].setEndDate(new LocalDate(2021, 5, 29));
+        course[0].addModules(modules[0], modules[1], modules[3]);
+        
+        course[1].setName("Applied Maths");
+        course[1].setStartDate(new LocalDate(2017, 9, 2));
+        course[1].setEndDate(new LocalDate(2020, 5, 26));
+        course[1].addModules(modules[1], modules[2], modules[3]);
         return course;
     }
     
