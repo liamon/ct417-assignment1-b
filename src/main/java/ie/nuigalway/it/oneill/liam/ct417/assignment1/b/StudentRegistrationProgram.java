@@ -23,7 +23,7 @@ public class StudentRegistrationProgram {
         students[3].setId("308541");
         students[3].setDob(new LocalDate(1999, 8, 26));
         
-        Module[] modules = {new Module(), new Module(), new Module()};
+        Module[] modules = {new Module(), new Module(), new Module(), new Module()};
         modules[0].setId("PH396");
         modules[0].setName("Astrophysics");
         modules[0].addStudents(students[2], students[3]);
@@ -33,9 +33,9 @@ public class StudentRegistrationProgram {
         modules[2].setId("CS106");
         modules[2].setName("Basics of Computer Programming");
         modules[2].addStudents(students[0], students[1], students[2], students[3]);
-        modules[2].setId("PH405");
-        modules[2].setName("Advanced Mechanics");
-        modules[2].addStudents(students[0], students[1], students[3]);
+        modules[3].setId("PH405");
+        modules[3].setName("Advanced Mechanics");
+        modules[3].addStudents(students[0], students[1], students[3]);
         
         Course course = new Course();
         course.setName("Physics");
