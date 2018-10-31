@@ -64,6 +64,8 @@ public class StudentRegistrationProgram {
         return course;
     }
     
+    // Use of StringBuilder is more efficient than string concatenation with '+'
+    
     private static String courseInfo(Course course) {
         StringBuilder courseInfo = new StringBuilder("Course: ");
         courseInfo.append(course.getName());
