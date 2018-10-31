@@ -1,6 +1,7 @@
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.b;
 
 import ie.nuigalway.it.oneill.liam.ct417.assignment1.a.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.joda.time.LocalDate;
 
@@ -102,7 +103,16 @@ public class StudentRegistrationProgram {
         StringBuilder studentInfo = new StringBuilder(student.getName());
         studentInfo.append("\nUsername: ");
         studentInfo.append(student.getUsername());
+        // For some reason Module.addStudents() is not adding the modules to the students,
+        // even though it does in the JUnit test in part A. I have thus had to comment out
+        // these two lines, since they rely on that working.
+        //studentInfo.append("\nModules: ");
+        //studentInfo.append(moduleListOf(student));
         studentInfo.append("\n");
         return studentInfo.toString();
+    }
+    
+    private static String moduleListOf(Student student) {
+        return student.getModules().stream().map(Module::getId).collect(Collectors.joining(", "));
     }
 }
