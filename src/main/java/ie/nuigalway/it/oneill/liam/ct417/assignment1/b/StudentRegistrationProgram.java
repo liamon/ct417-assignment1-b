@@ -53,9 +53,9 @@ public class StudentRegistrationProgram {
         courseInfo.append("\nEnd Date: ");
         courseInfo.append(course.getEndDate());
         courseInfo.append("\nModules: \n");
-        for (Module module : course.getModules()) {
+        course.getModules().forEach((module) -> {
             courseInfo.append(moduleInfo(module));
-        }
+        });
         courseInfo.append("\n");
         return courseInfo.toString();
     }
@@ -65,9 +65,9 @@ public class StudentRegistrationProgram {
         moduleInfo.append(" - ");
         moduleInfo.append(module.getId());
         moduleInfo.append("\nStudents: \n");
-        for (Student student : module.getStudents()) {
+        module.getStudents().forEach((student) -> {
             moduleInfo.append(studentInfo(student));
-        }
+        });
         moduleInfo.append("\n");
         return moduleInfo.toString();
     }
