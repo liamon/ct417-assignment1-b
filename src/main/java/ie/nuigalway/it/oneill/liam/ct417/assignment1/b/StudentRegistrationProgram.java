@@ -77,10 +77,6 @@ public class StudentRegistrationProgram {
     private static String courseInfo(Course course) {
         StringBuilder courseInfo = new StringBuilder("Course: ");
         courseInfo.append(course.getName());
-        courseInfo.append("\nStart Date: ");
-        courseInfo.append(course.getStartDate());
-        courseInfo.append("\nEnd Date: ");
-        courseInfo.append(course.getEndDate());
         
         courseInfo.append("\nModules: \n");
         course.getModules().forEach((module) -> {
@@ -104,10 +100,8 @@ public class StudentRegistrationProgram {
     
     private static String studentInfo(Student student) {
         StringBuilder studentInfo = new StringBuilder(student.getName());
-        studentInfo.append("\nID: ");
-        studentInfo.append(student.getId());
-        studentInfo.append("\nDate of birth: ");
-        studentInfo.append(student.getDob());
+        studentInfo.append("\nUsername: ");
+        studentInfo.append(student.getUsername());
         studentInfo.append("\n");
         return studentInfo.toString();
     }
